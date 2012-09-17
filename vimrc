@@ -19,6 +19,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'mattn/zencoding-vim'
 Bundle 'tpope/vim-haml'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'mileszs/ack.vim'
 " vim-scripts repos
 Bundle 'L9'
 Bundle 'FuzzyFinder'
@@ -36,6 +37,8 @@ Bundle 'JavaScript-syntax'
 Bundle 'jeyb/vim-jst'
 Bundle 'vim-scripts/JSON.vim'
 Bundle 'ParseJSON'
+Bundle 'BufClose.vim'
+Bundle 'BufOnly.vim'
 
 " HTML 5
 Bundle 'othree/html5.vim'
@@ -56,6 +59,10 @@ set smartindent
 
 "open buffer list
 nnoremap <F5> :buffers<CR>:buffer<Space>
+
+" Close buffer and leave window open
+nnoremap <leader>c :BufClose<CR>
+nnoremap <leader>bo :BufOnly<CR>
 
 " remap : to ;
 nnoremap ; :
@@ -137,15 +144,11 @@ autocmd BufWritePre * :%s/\s\+$//e
 " Set syntax to jst for ejs files
 au BufNewFile,BufRead *.ejs set filetype=jst
 
-" HTML 5
-Bundle 'othree/html5.vim'
-
 " Markdown
 au BufRead *.md set ft=markdown
 " Options
 set encoding=utf-8
 set scrolloff=7
-set autoindent
 set showmode
 set showcmd
 set hidden
@@ -181,3 +184,7 @@ nmap <d-[> <<
 nmap <d-]> >>
 vmap <d-[> <gv
 vmap <d-]> >gv
+
+" disable swapping
+set nobackup
+set noswapfile
