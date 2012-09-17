@@ -1,0 +1,4 @@
+# ignores vim temporary files
+*.swp
+*.swo
+*~
