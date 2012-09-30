@@ -30,6 +30,9 @@ Bundle 'git://git.wincent.com/command-t.git'
 " Color schemes
 Bundle 'tomasr/molokai'
 
+"Vimux
+Bundle 'benmills/vimux'
+
 " Javascript
 Bundle 'scrooloose/syntastic.git'
 Bundle 'JavaScript-Indent'
@@ -118,6 +121,7 @@ let g:CommandTMaxFiles=20000
 "search functionality
 nnoremap / /\v
 vnoremap / /\v
+set incsearch
 set ignorecase
 set smartcase
 set gdefault
@@ -128,8 +132,6 @@ nnoremap <leader><space> :noh<cr>
 
 "colors
 colorscheme molokai
-
-"yanking
 
 " Yank to system clipboard as well
 noremap y "*y
@@ -163,28 +165,27 @@ set laststatus=2
 set virtualedit=all
 set guifont=Monaco:h12
 
-" GUI tinkering
-if has('gui_macvim')
-  " set guifont=Monaco:h12
-  set guioptions-=T  " no toolbar
-  macmenu &File.Print key=<nop>
-  map <D-p> <nop>
-endif
+"nerdtree on/off
+nnoremap <silent> <f2> :NERDTreeToggle<cr>
+inoremap <silent> <f2> <esc>:NERDTreeToggle<cr>
+nmap <silent> <leader>m :NERDTreeFocus<cr>
 
-"Nerdtree on/off
-nnoremap <silent> <F2> :NERDTreeToggle<cr>
-inoremap <silent> <F2> <ESC>:NERDTreeToggle<cr>
-nmap <silent> <leader>m :NERDTreeFocus<CR>
+"yankring toggle
+noremap <silent> <f3> :YRShow<cr>
 
-"Yankring toggle
-noremap <silent> <F3> :YRShow<CR>
-
-" Fix vim's idiotic indentation
-nmap <d-[> <<
-nmap <d-]> >>
-vmap <d-[> <gv
-vmap <d-]> >gv
+" fix vim's idiotic indentation
+vnoremap > ><cr>gv
+vnoremap < <<cr>gv
 
 " disable swapping
 set nobackup
 set noswapfile
+set background=dark
+set t_Co=256
+
+" Set omnicomplete
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
