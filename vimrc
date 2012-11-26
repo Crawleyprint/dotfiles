@@ -1,3 +1,4 @@
+set shell=/bin/bash
 set nocompatible               " be iMproved
 filetype off                   " required!
 
@@ -11,60 +12,85 @@ Bundle 'gmarik/vundle'
 " My Bundles here:
 "
 " original repos on github
-
+Bundle 'scrooloose/nerdtree'
+Bundle 'mattn/webapi-vim'
+Bundle 'mattn/gist-vim'
+Bundle 'git.zip'
 Bundle 'tpope/vim-fugitive'
+Bundle 'vim-scripts/L9'
+Bundle 'vim-scripts/FuzzyFinder'
+Bundle 'sethbc/fuzzyfinder_textmate'
+Bundle 'SirVer/ultisnips'
+Bundle 'scrooloose/syntastic'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'vim-scripts/taglist.vim'
+Bundle 'vim-scripts/httplog'
+Bundle 'plasticboy/vim-markdown'
+Bundle 'BufOnly.vim'
+Bundle 'aliva/vim-fish'
 Bundle 'tpope/vim-rails.git'
 Bundle 'tpope/vim-surround'
-Bundle 'scrooloose/nerdtree'
 Bundle 'mattn/zencoding-vim'
 Bundle 'tpope/vim-haml'
-Bundle 'Lokaltog/vim-powerline'
 Bundle 'mileszs/ack.vim'
-" vim-scripts repos
-Bundle 'L9'
-Bundle 'FuzzyFinder'
 Bundle 'YankRing.vim'
-" non github repos
-Bundle 'git://git.wincent.com/command-t.git'
-" ...
+"
 " Color schemes
 Bundle 'tomasr/molokai'
-
-"Vimux
-Bundle 'benmills/vimux'
-
-" Javascript
-Bundle 'scrooloose/syntastic.git'
+" Javascript and html
 Bundle 'JavaScript-Indent'
 Bundle 'JavaScript-syntax'
 Bundle 'jeyb/vim-jst'
 Bundle 'vim-scripts/JSON.vim'
 Bundle 'ParseJSON'
-Bundle 'BufClose.vim'
 Bundle 'BufOnly.vim'
-
-" HTML 5
+Bundle 'kchmck/vim-coffee-script'
 Bundle 'othree/html5.vim'
 
 filetype plugin indent on     " required!
 
 syntax enable
+
 set number
 set mouse=a
 set colorcolumn=80
-
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
 set autoindent
 set smartindent
-
+set incsearch
+set ignorecase
+set smartcase
+set gdefault
+set showmatch
+set hlsearch
+set encoding=utf-8
+set scrolloff=7
+set showmode
+set showcmd
+set hidden
+set wildmenu
+set wildmode=list:longest
+set visualbell
+set cursorline
+set ttyfast
+set ruler
+set backspace=indent,eol,start
+set laststatus=2
+set virtualedit=all
+set guifont=Monaco:h12
+set nobackup " disable swapping
+set noswapfile " disable swapping
+set background=dark
+set t_Co=256
 "open buffer list
 nnoremap <F5> :buffers<CR>:buffer<Space>
+nnoremap <F6> :call NumberToggle()<CR>
+nnoremap <leader>t :FuzzyFinderTextMate<CR>
 
 " Close buffer and leave window open
-nnoremap <leader>c :BufClose<CR>
 nnoremap <leader>bo :BufOnly<CR>
 
 " remap : to ;
@@ -113,25 +139,11 @@ nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
 
-" Command-T options
-let g:CommandTMaxHeight=20
-let g:CommandTAlwaysShowDotFiles=1
-let g:CommandTMaxFiles=20000
-
 "search functionality
 nnoremap / /\v
 vnoremap / /\v
-set incsearch
-set ignorecase
-set smartcase
-set gdefault
-set incsearch
-set showmatch
-set hlsearch
-nnoremap <leader><space> :noh<cr>
 
-"colors
-colorscheme molokai
+nnoremap <leader><space> :noh<cr>
 
 " Yank to system clipboard as well
 noremap y "*y
@@ -141,29 +153,6 @@ noremap Y "*y$
 " Set zen coding abbreviation expand key
 let g:user_zen_expandabbr_key = '<D-e>'
 
-autocmd BufWritePre * :%s/\s\+$//e
-
-" Set syntax to jst for ejs files
-au BufNewFile,BufRead *.ejs set filetype=jst
-
-" Markdown
-au BufRead *.md set ft=markdown
-" Options
-set encoding=utf-8
-set scrolloff=7
-set showmode
-set showcmd
-set hidden
-set wildmenu
-set wildmode=list:longest
-set visualbell
-set cursorline
-set ttyfast
-set ruler
-set backspace=indent,eol,start
-set laststatus=2
-set virtualedit=all
-set guifont=Monaco:h12
 
 "nerdtree on/off
 nnoremap <silent> <f2> :NERDTreeToggle<cr>
@@ -177,15 +166,30 @@ noremap <silent> <f3> :YRShow<cr>
 vnoremap > ><cr>gv
 vnoremap < <<cr>gv
 
-" disable swapping
-set nobackup
-set noswapfile
-set background=dark
-set t_Co=256
 
+" Vim doesn't set a FileType for JSON, so we'll do it manually:
+autocmd BufNewFile,BufReadPost *.json setlocal filetype=javascript.json
+" Requires that you have Python v2.6+ installed. (Most *nix systems do.)
+autocmd FileType json let b:vimpipe_command="python -m json.tool"
+autocmd BufWritePre * :%s/\s\+$//e
+" Set syntax to jst for ejs files
+au BufNewFile,BufRead *.ejs set filetype=jst
+" Markdown
+au BufRead *.md set ft=markdown
 " Set omnicomplete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+"colors
+colorscheme molokai
+
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set number
+  else
+    set relativenumber
+  endif
+endfunc
+
