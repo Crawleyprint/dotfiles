@@ -18,12 +18,11 @@ Bundle 'mattn/gist-vim'
 Bundle 'git.zip'
 Bundle 'tpope/vim-fugitive'
 Bundle 'vim-scripts/L9'
-Bundle 'vim-scripts/FuzzyFinder'
-Bundle 'sethbc/fuzzyfinder_textmate'
 Bundle 'SirVer/ultisnips'
+Bundle 'wincent/Command-T'
 Bundle 'scrooloose/syntastic'
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'vim-scripts/taglist.vim'
+Bundle 'majutsushi/tagbar'
 Bundle 'vim-scripts/httplog'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'BufOnly.vim'
@@ -71,6 +70,7 @@ set scrolloff=7
 set showmode
 set showcmd
 set hidden
+set copyindent
 set wildmenu
 set wildmode=list:longest
 set visualbell
@@ -85,10 +85,20 @@ set nobackup " disable swapping
 set noswapfile " disable swapping
 set background=dark
 set t_Co=256
+set list
+set listchars=tab:>.,trail:.,extends:#,nbsp:.
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+
+if has('gui_running')
+  set guioptions=egmrt
+  macmenu &File.New\ Tab key=<nop>
+endif
+let mapleader = ","
 "open buffer list
-nnoremap <F5> :buffers<CR>:buffer<Space>
 nnoremap <F6> :call NumberToggle()<CR>
-nnoremap <leader>t :FuzzyFinderTextMate<CR>
+nnoremap <leader>t :CommandT<CR>
+inoremap <leader>t :CommandT<CR>
+vnoremap <leader>t :CommandT<CR>
 
 " Close buffer and leave window open
 nnoremap <leader>bo :BufOnly<CR>
@@ -97,7 +107,6 @@ nnoremap <leader>bo :BufOnly<CR>
 nnoremap ; :
 
 " Change leader key to ,
-let mapleader = ","
 nnoremap <leader>w <C-w>v<C-w>l
 
 " quickly open .vimrc
@@ -134,9 +143,9 @@ nnoremap j gj
 nnoremap k gk
 
 "disable F1 key in all modes
-inoremap <F1> <ESC>
-nnoremap <F1> <ESC>
-vnoremap <F1> <ESC>
+inoremap <F1> :CommandTBuffer<CR>
+nnoremap <F1> :CommandTBuffer<CR>
+vnoremap <F1> :CommandTBuffer<CR>
 
 
 "search functionality
@@ -193,3 +202,5 @@ function! NumberToggle()
   endif
 endfunc
 
+let g:CommandTMaxFiles=180000
+let g:CommandTMaxHeight= 10
