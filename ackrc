@@ -1,4 +1,16 @@
+# exclude build directories
+--ignore-dir=build
+# sort the files for easier viewing
+--sort-files
+# all-lower-case is case-insensitive, otherwise it's case sensitive
+--smart-case
+# show the context of the found item
+--context
+# Other file types we want to search
+--type-set=haml=.haml
+--type-set=sass=.sass
 --type-set=scss=.scss
+--type-add=js=.js
+--type-set=coffee=.coffee
 --type-set=template=.ejs,.jst
 --type-add=php=.php
---type-add=js=.js
