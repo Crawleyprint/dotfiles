@@ -33,6 +33,7 @@ Bundle 'mattn/zencoding-vim'
 Bundle 'tpope/vim-haml'
 Bundle 'mileszs/ack.vim'
 Bundle 'YankRing.vim'
+Bundle 'vim-scripts/ZoomWin'
 "
 " Color schemes
 Bundle 'tomasr/molokai'
