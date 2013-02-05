@@ -34,6 +34,7 @@ Bundle 'tpope/vim-haml'
 Bundle 'mileszs/ack.vim'
 Bundle 'YankRing.vim'
 Bundle 'miripiruni/CSScomb-for-Vim'
+Bundle 'vim-scripts/ZoomWin'
 "
 " Color schemes
 Bundle 'tomasr/molokai'
