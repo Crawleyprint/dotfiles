@@ -33,6 +33,7 @@ Bundle 'mattn/zencoding-vim'
 Bundle 'tpope/vim-haml'
 Bundle 'mileszs/ack.vim'
 Bundle 'YankRing.vim'
+Bundle 'miripiruni/CSScomb-for-Vim'
 "
 " Color schemes
 Bundle 'tomasr/molokai'
@@ -45,6 +46,9 @@ Bundle 'ParseJSON'
 Bundle 'BufOnly.vim'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'othree/html5.vim'
+Bundle 'beyondwords/vim-twig'
+Bundle 'rodjek/vim-puppet'
+Bundle 't9md/vim-chef'
 
 filetype plugin indent on     " required!
 
