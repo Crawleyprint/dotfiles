@@ -207,5 +207,11 @@ function! NumberToggle()
   endif
 endfunc
 
+if &term =~ "xterm" || &term =~ "screen"
+  let g:CommandTCancelMap     = ['<ESC>', '<C-c>']
+  let g:CommandTSelectNextMap = ['<C-n>', '<C-j>', '<ESC>OB']
+  let g:CommandTSelectPrevMap = ['<C-p>', '<C-k>', '<ESC>OA']
+endif
+
 let g:CommandTMaxFiles=180000
 let g:CommandTMaxHeight= 10
