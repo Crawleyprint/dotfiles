@@ -104,6 +104,7 @@ nnoremap <F6> :call NumberToggle()<CR>
 nnoremap <leader>t :CommandT<CR>
 inoremap <leader>t :CommandT<CR>
 vnoremap <leader>t :CommandT<CR>
+nnoremap K i<CR><Esc>
 
 " Close buffer and leave window open
 nnoremap <leader>bo :BufOnly<CR>
