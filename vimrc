@@ -71,7 +71,7 @@ set gdefault
 set showmatch
 set hlsearch
 set encoding=utf-8
-set scrolloff=7
+set scrolloff=3
 set showmode
 set showcmd
 set hidden
