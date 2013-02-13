@@ -175,6 +175,8 @@ let g:user_zen_expandabbr_key = '<D-e>'
 nnoremap <silent> <f2> :NERDTreeToggle<cr>
 inoremap <silent> <f2> <esc>:NERDTreeToggle<cr>
 nmap <silent> <leader>m :NERDTreeFocus<cr>
+nnoremap <leader>c :CSScomb<cr>
+vnoremap <leader>c :CSScomb<cr>
 
 "yankring toggle
 noremap <silent> <f3> :YRShow<cr>
