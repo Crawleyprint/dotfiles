@@ -93,6 +93,7 @@ set t_Co=256
 set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+set nowrap
 
 if has('gui_running')
   set guioptions=egmrt
@@ -105,6 +106,7 @@ nnoremap <leader>t :CommandT<CR>
 inoremap <leader>t :CommandT<CR>
 vnoremap <leader>t :CommandT<CR>
 
+nnoremap K i<CR><Esc>
 " Close buffer and leave window open
 nnoremap <leader>bo :BufOnly<CR>
 
