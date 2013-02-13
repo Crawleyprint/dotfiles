@@ -71,7 +71,7 @@ set gdefault
 set showmatch
 set hlsearch
 set encoding=utf-8
-set scrolloff=7
+set scrolloff=3
 set showmode
 set showcmd
 set hidden
@@ -105,6 +105,7 @@ nnoremap <F6> :call NumberToggle()<CR>
 nnoremap <leader>t :CommandT<CR>
 inoremap <leader>t :CommandT<CR>
 vnoremap <leader>t :CommandT<CR>
+nnoremap K i<CR><Esc>
 
 nnoremap K i<CR><Esc>
 " Close buffer and leave window open
