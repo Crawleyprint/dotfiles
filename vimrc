@@ -220,3 +220,9 @@ endif
 
 let g:CommandTMaxFiles=180000
 let g:CommandTMaxHeight= 10
+
+" resize current buffer by +/- 5
+nnoremap <D-left> :vertical resize -5<cr>
+nnoremap <D-down> :resize +5<cr>
+nnoremap <D-up> :resize -5<cr>
+nnoremap <D-right> :vertical resize +5<cr>
