@@ -85,7 +85,7 @@ set ruler
 set backspace=indent,eol,start
 set laststatus=2
 set virtualedit=all
-set guifont=Monaco:h12
+set guifont=Consolas:h12
 set nobackup " disable swapping
 set noswapfile " disable swapping
 set background=dark
