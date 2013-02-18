@@ -35,6 +35,7 @@ Bundle 'mileszs/ack.vim'
 Bundle 'YankRing.vim'
 Bundle 'miripiruni/CSScomb-for-Vim'
 Bundle 'vim-scripts/ZoomWin'
+Bundle 'slim-template/vim-slim'
 "
 " Color schemes
 Bundle 'tomasr/molokai'
@@ -186,6 +187,8 @@ vnoremap > ><cr>gv
 vnoremap < <<cr>gv
 
 
+" Vim doesn't set a FileType for slim, so we'll do it manually:
+autocmd BufNewFile,BufReadPost *.slim setlocal filetype=slim
 " Vim doesn't set a FileType for JSON, so we'll do it manually:
 autocmd BufNewFile,BufReadPost *.json setlocal filetype=javascript.json
 " Requires that you have Python v2.6+ installed. (Most *nix systems do.)
