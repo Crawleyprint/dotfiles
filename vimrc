@@ -35,6 +35,7 @@ Bundle 'mileszs/ack.vim'
 Bundle 'YankRing.vim'
 Bundle 'miripiruni/CSScomb-for-Vim'
 Bundle 'vim-scripts/ZoomWin'
+Bundle 'skammer/vim-css-color'
 "
 " Color schemes
 Bundle 'tomasr/molokai'
@@ -177,6 +178,7 @@ inoremap <silent> <f2> <esc>:NERDTreeToggle<cr>
 nmap <silent> <leader>m :NERDTreeFocus<cr>
 nnoremap <leader>c :CSScomb<cr>
 vnoremap <leader>c :CSScomb<cr>
+let NERDTreeShowHidden = 1
 
 "yankring toggle
 noremap <silent> <f3> :YRShow<cr>
@@ -185,6 +187,9 @@ noremap <silent> <f3> :YRShow<cr>
 vnoremap > ><cr>gv
 vnoremap < <<cr>gv
 
+" Set indentation for files
+
+autocmd FileType css,sass,scss setlocal ai sw=4 sts=4 et
 
 " Vim doesn't set a FileType for JSON, so we'll do it manually:
 autocmd BufNewFile,BufReadPost *.json setlocal filetype=javascript.json
