@@ -35,7 +35,7 @@ Bundle 'mileszs/ack.vim'
 Bundle 'YankRing.vim'
 Bundle 'miripiruni/CSScomb-for-Vim'
 Bundle 'vim-scripts/ZoomWin'
-Bundle 'skammer/vim-css-color'
+Bundle 'slim-template/vim-slim'
 "
 " Color schemes
 Bundle 'tomasr/molokai'
@@ -100,6 +100,7 @@ if has('gui_running')
   set guioptions=egmrt
   macmenu &File.New\ Tab key=<nop>
 endif
+
 let mapleader = ","
 "open buffer list
 nnoremap <F6> :call NumberToggle()<CR>
@@ -191,6 +192,8 @@ vnoremap < <<cr>gv
 
 autocmd FileType css,sass,scss setlocal ai sw=4 sts=4 et
 
+" Vim doesn't set a FileType for slim, so we'll do it manually:
+autocmd BufNewFile,BufReadPost *.slim setlocal filetype=slim
 " Vim doesn't set a FileType for JSON, so we'll do it manually:
 autocmd BufNewFile,BufReadPost *.json setlocal filetype=javascript.json
 " Requires that you have Python v2.6+ installed. (Most *nix systems do.)
