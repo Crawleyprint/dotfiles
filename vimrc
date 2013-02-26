@@ -244,6 +244,6 @@ augroup CursorLine
   au!
   au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
   au WinLeave * setlocal nocursorline
-  hi CursorLine   cterm=NONE ctermbg=grey guibg=DodgerBlue4
+  hi CursorLine   cterm=NONE ctermbg=grey guibg=RoyalBlue4
 augroup END
 
