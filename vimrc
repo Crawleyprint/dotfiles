@@ -13,6 +13,7 @@ Bundle 'gmarik/vundle'
 "
 " original repos on github
 Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/nerdcommenter'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
 Bundle 'git.zip'
@@ -238,3 +239,11 @@ nnoremap <D-down> :resize +5<cr>
 nnoremap <D-up> :resize -5<cr>
 nnoremap <D-right> :vertical resize +5<cr>
 hi Search guibg=white guifg=red gui=underline
+hi Comment ctermfg=green guifg=green
+augroup CursorLine
+  au!
+  au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+  au WinLeave * setlocal nocursorline
+  hi CursorLine   cterm=NONE ctermbg=grey guibg=DodgerBlue4
+augroup END
+
