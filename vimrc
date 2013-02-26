@@ -51,6 +51,7 @@ Bundle 'othree/html5.vim'
 Bundle 'beyondwords/vim-twig'
 Bundle 'rodjek/vim-puppet'
 Bundle 't9md/vim-chef'
+Bundle 'Townk/vim-autoclose'
 
 filetype plugin indent on     " required!
 
@@ -100,6 +101,7 @@ if has('gui_running')
   set guioptions=egmrt
   macmenu &File.New\ Tab key=<nop>
 endif
+
 
 let mapleader = ","
 "open buffer list
@@ -234,3 +236,4 @@ nnoremap <D-left> :vertical resize -5<cr>
 nnoremap <D-down> :resize +5<cr>
 nnoremap <D-up> :resize -5<cr>
 nnoremap <D-right> :vertical resize +5<cr>
+hi Search guibg=white guifg=red gui=underline
