@@ -36,6 +36,7 @@ Bundle 'YankRing.vim'
 Bundle 'miripiruni/CSScomb-for-Vim'
 Bundle 'vim-scripts/ZoomWin'
 Bundle 'slim-template/vim-slim'
+Bundle 'ervandew/supertab'
 "
 " Color schemes
 Bundle 'tomasr/molokai'
