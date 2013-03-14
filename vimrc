@@ -8,11 +8,13 @@ call vundle#rc()
 " let Vundle manage Vundle
 " required!
 Bundle 'gmarik/vundle'
+Bundle 'Lokaltog/vim-powerline'
 
 " My Bundles here:
 "
 " original repos on github
 Bundle 'scrooloose/nerdtree'
+Bundle 'php.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
@@ -22,11 +24,9 @@ Bundle 'vim-scripts/L9'
 Bundle 'SirVer/ultisnips'
 Bundle 'wincent/Command-T'
 Bundle 'scrooloose/syntastic'
-Bundle 'Lokaltog/vim-powerline'
 Bundle 'majutsushi/tagbar'
 Bundle 'vim-scripts/httplog'
 Bundle 'plasticboy/vim-markdown'
-Bundle 'BufOnly.vim'
 Bundle 'aliva/vim-fish'
 Bundle 'tpope/vim-rails.git'
 Bundle 'tpope/vim-surround'
@@ -54,7 +54,8 @@ Bundle 'beyondwords/vim-twig'
 Bundle 'rodjek/vim-puppet'
 Bundle 't9md/vim-chef'
 Bundle 'Townk/vim-autoclose'
-
+Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'vim-scripts/scratch.vim'
 filetype plugin indent on     " required!
 
 syntax enable
@@ -98,6 +99,8 @@ set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 set nowrap
+" How many tenths of a second to blink when matching brackets
+set mat=2
 
 if has('gui_running')
   set guioptions=egmrt
@@ -108,6 +111,7 @@ endif
 let mapleader = ","
 "open buffer list
 nnoremap <F6> :call NumberToggle()<CR>
+nnoremap <F10> :Scratch<CR>
 nnoremap <leader>t :CommandT<CR>
 inoremap <leader>t :CommandT<CR>
 vnoremap <leader>t :CommandT<CR>
@@ -238,12 +242,36 @@ nnoremap <D-left> :vertical resize -5<cr>
 nnoremap <D-down> :resize +5<cr>
 nnoremap <D-up> :resize -5<cr>
 nnoremap <D-right> :vertical resize +5<cr>
-hi Search guibg=white guifg=red gui=underline
+
+hi Search guibg=black guifg=yellow gui=underline
 hi Comment ctermfg=green guifg=green
+hi Normal guibg=#000000
+
+" tweak cursor line
 augroup CursorLine
   au!
   au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
   au WinLeave * setlocal nocursorline
-  hi CursorLine   cterm=NONE ctermbg=grey guibg=RoyalBlue4
+  hi CursorLine cterm=NONE guibg=RoyalBlue4
 augroup END
 
+" Don't close window, when deleting a buffer
+command! Bclose call <SID>BufcloseCloseIt()
+function! <SID>BufcloseCloseIt()
+   let l:currentBufNum = bufnr("%")
+   let l:alternateBufNum = bufnr("#")
+
+   if buflisted(l:alternateBufNum)
+     buffer #
+   else
+     bnext
+   endif
+
+   if bufnr("%") == l:currentBufNum
+     new
+   endif
+
+   if buflisted(l:currentBufNum)
+     execute("bdelete! ".l:currentBufNum)
+   endif
+endfunction
