@@ -38,6 +38,9 @@ Bundle 'miripiruni/CSScomb-for-Vim'
 Bundle 'vim-scripts/ZoomWin'
 Bundle 'slim-template/vim-slim'
 Bundle 'ervandew/supertab'
+Bundle 'vim-scripts/Gundo'
+Bundle 'chrisbra/NrrwRgn'
+Bundle 'tmhedberg/matchit'
 "
 " Color schemes
 Bundle 'tomasr/molokai'
@@ -111,11 +114,13 @@ endif
 let mapleader = ","
 "open buffer list
 nnoremap <F6> :call NumberToggle()<CR>
+nnoremap <F5> :GundoToggle<CR>
 nnoremap <F10> :Scratch<CR>
 nnoremap <leader>t :CommandT<CR>
 inoremap <leader>t :CommandT<CR>
 vnoremap <leader>t :CommandT<CR>
 nnoremap K i<CR><Esc>
+vnoremap <F4> :NR<CR>
 
 nnoremap K i<CR><Esc>
 " Close buffer and leave window open
