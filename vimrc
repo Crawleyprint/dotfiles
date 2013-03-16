@@ -139,7 +139,7 @@ noremap <silent> <F3> :YRShow<cr>
 vnoremap <F4> :NR<CR>
 
 " Turn ctrl-p on/off
-nnoremap <F1> :CtrlP<CR>
+nnoremap <F1> :NERDTreeToggle<CR>
 
 " Turn Gundo on/off
 nnoremap <F2> :GundoToggle<CR>
@@ -167,6 +167,8 @@ nnoremap <leader>w <C-w>v<C-w>l
 nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
 " source .vimrc
 nmap <leader>sv :so $MYVIMRC<CR>
+
+nnoremap <leader>t :CtrlP<CR>
 
 "**************
 "Movement
