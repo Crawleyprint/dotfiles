@@ -251,6 +251,10 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
+" Remove scrollbars
+set guioptions-=L
+set guioptions-=r
+
 
 "colors
 colorscheme molokai
@@ -263,15 +267,9 @@ function! NumberToggle()
   endif
 endfunc
 
-if &term =~ "xterm" || &term =~ "screen"
-  let g:CommandTCancelMap     = ['<ESC>', '<C-c>']
-  let g:CommandTSelectNextMap = ['<C-n>', '<C-j>', '<ESC>OB']
-  let g:CommandTSelectPrevMap = ['<C-p>', '<C-k>', '<ESC>OA']
-endif
-
 hi Search guibg=black guifg=yellow gui=underline
 hi Comment ctermfg=green guifg=green
-hi Normal guibg=#000000
+hi Normal guibg=black ctermbg=None
 
 " tweak cursor line
 augroup CursorLine

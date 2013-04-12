@@ -1,0 +1,13 @@
+[core]
+	editor = vim
+[color]
+	ui = auto
+[user]
+	name = Mladen Stepanic
+	emal = mladen.stepanic@gmail.com
+	email = mladen.stepanic@gmail.com
+[alias]
+	st = status -sb
+	co = checkout
+	ammend = commit --amend -C HEAD
+	ls = log --pretty=format:\"%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]\" --decorate --date=short
