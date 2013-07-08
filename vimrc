@@ -54,6 +54,8 @@ call vundle#rc()
 
 " Color schemes
   Bundle 'tomasr/molokai'
+  Bundle 'geetarista/ego.vim'
+  Bundle 'matthewtodd/vim-twilight'
 
 " Html/CSS/Templating
   Bundle 'mattn/zencoding-vim'
@@ -83,6 +85,8 @@ set expandtab
 set autoindent
 set smartindent
 set ruler
+" refresh buffer if file was change from outside
+set autoread
 
 " Better search options
 set incsearch
@@ -121,7 +125,7 @@ set mat=2
 let mapleader = ","
 
 " Set zen coding abbreviation expand key
-let g:user_zen_expandabbr_key = '<D-e>'
+let g:user_zen_expandabbr_key = '<C-o>'
 
 " Show all files in NERDTree
 let NERDTreeShowHidden = 1
@@ -203,6 +207,9 @@ nnoremap k gk
 " Taming search
 nnoremap / /\v
 vnoremap / /\v
+nnoremap <C-i> /\v
+vnoremap <C-i> /\v
+
 
 " Dismiss search highlight
 nnoremap <leader><space> :noh<cr>
@@ -255,9 +262,8 @@ autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 set guioptions-=L
 set guioptions-=r
 
-
 "colors
-colorscheme molokai
+colorscheme twilight
 
 function! NumberToggle()
   if(&relativenumber == 1)
@@ -267,16 +273,11 @@ function! NumberToggle()
   endif
 endfunc
 
-hi Search guibg=black guifg=yellow gui=underline
-hi Comment ctermfg=green guifg=green
-hi Normal guibg=black ctermbg=None
-
 " tweak cursor line
 augroup CursorLine
   au!
   au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
   au WinLeave * setlocal nocursorline
-  hi CursorLine cterm=NONE guibg=RoyalBlue4
 augroup END
 
 " Don't close window, when deleting a buffer
@@ -300,3 +301,6 @@ function! <SID>BufcloseCloseIt()
      execute("bdelete! ".l:currentBufNum)
    endif
 endfunction
+
+" Change ruler color
+highlight ColorColumn ctermbg=Black
