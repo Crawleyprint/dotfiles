@@ -45,6 +45,7 @@ call vundle#rc()
   Bundle 'jeyb/vim-jst'
   Bundle 'vim-scripts/JSON.vim'
   Bundle 't9md/vim-chef'
+  Bundle 'nono/vim-handlebars'
   Bundle 'rodjek/vim-puppet'
 
 " Git/github related
@@ -222,8 +223,8 @@ noremap Y "*y$
 
 "nerdtree on/off
 nmap <silent> <leader>m :NERDTreeFocus<cr>
-nnoremap <leader>c :CSScomb<cr>
-vnoremap <leader>c :CSScomb<cr>
+nnoremap <f5> vi{ :CSScomb<cr>
+vnoremap <f5> vi{ :CSScomb<cr>
 
 " fix vim's idiotic indentation
 vnoremap > ><cr>gv
