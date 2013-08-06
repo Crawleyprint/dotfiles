@@ -121,6 +121,7 @@ set listchars=tab:>.,trail:.,extends:#,nbsp:.
 set nowrap
 " How many tenths of a second to blink when matching brackets
 set mat=2
+set pt=<f12>
 
 " Change mapleader
 let mapleader = ","
