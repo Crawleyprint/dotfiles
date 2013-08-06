@@ -104,7 +104,7 @@ set hidden
 set copyindent
 set wildmenu
 set wildmode=list:longest
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,docs/*     " MacOSX/Linux
 set visualbell
 set cursorline
 set ttyfast
@@ -231,7 +231,7 @@ vnoremap > ><cr>gv
 vnoremap < <<cr>gv
 
 " Set indentation for files
-autocmd FileType css,sass,scss setlocal ai sw=4 sts=4 et
+autocmd FileType css,sass,scss setlocal ai sw=2 sts=2 et
 
 " Vim doesn't set a FileType for slim, so we'll do it manually:
 autocmd BufNewFile,BufReadPost *.slim setlocal filetype=slim
@@ -305,3 +305,5 @@ endfunction
 
 " Change ruler color
 highlight ColorColumn ctermbg=Black
+
+let g:syntastic_javascript_checkers=['gjslint']
