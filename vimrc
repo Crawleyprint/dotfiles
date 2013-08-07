@@ -1,7 +1,6 @@
 set shell=/bin/bash
 set nocompatible               " be iMproved
 filetype off                   " required!
-
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
@@ -31,6 +30,7 @@ call vundle#rc()
   Bundle 'Townk/vim-autoclose'
   Bundle 'vim-scripts/scratch.vim'
   Bundle 'kien/ctrlp.vim.git'
+  Bundle 'vim-scripts/Align'
 
 " Syntaxes
   Bundle 'php.vim'
@@ -59,7 +59,7 @@ call vundle#rc()
   Bundle 'matthewtodd/vim-twilight'
 
 " Html/CSS/Templating
-  Bundle 'mattn/zencoding-vim'
+  Bundle 'mattn/emmet-vim'
   Bundle 'miripiruni/CSScomb-for-Vim'
   Bundle 'othree/html5.vim'
   Bundle 'beyondwords/vim-twig'
@@ -127,10 +127,14 @@ set pt=<f12>
 let mapleader = ","
 
 " Set zen coding abbreviation expand key
-let g:user_zen_expandabbr_key = '<C-o>'
+let g:user_emmet_expandabbr_key = '<C-o>'
+let g:user_emmet_mode = 'a'
 
 " Show all files in NERDTree
 let NERDTreeShowHidden = 1
+
+" Choose right linter for syntastic
+let g:syntastic_javascript_checkers=['gjslint']
 
 
 " *****************************
@@ -307,4 +311,3 @@ endfunction
 " Change ruler color
 highlight ColorColumn ctermbg=Black
 
-let g:syntastic_javascript_checkers=['gjslint']
