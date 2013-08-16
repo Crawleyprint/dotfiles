@@ -31,6 +31,7 @@ call vundle#rc()
   Bundle 'vim-scripts/scratch.vim'
   Bundle 'kien/ctrlp.vim.git'
   Bundle 'vim-scripts/Align'
+  Bundle 'int3/vim-taglist-plus'
 
 " Syntaxes
   Bundle 'php.vim'
