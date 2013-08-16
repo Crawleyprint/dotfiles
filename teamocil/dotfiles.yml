@@ -3,7 +3,7 @@ session:
   windows:
     - name: "Dotfiles"
       root: "~/repos/dotfiles"
-      layout: event-horizontal
+      layout: even-horizontal
       panes:
         - cmd: ["vim vimrc"]
         - cmd: ["pwd"]
