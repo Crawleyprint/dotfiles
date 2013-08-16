@@ -1,22 +1,22 @@
 #! /bin/bash
 
-home_dir=/Users/mladen/
+home_dir=/Users/mladen
 #set dotfiles repo location
-target_dir=/Users/mladen/repos/dotfiles
+target_dir=$home_dir/repos/dotfiles
 
 #and cd there
-cd $target_dir
+cd $target_dir &&
 
 #update submodules to enable Vundle
 git submodule update --init &&
 
-cd
+cd $home_dir &&
 
 #loop through files and link them
 for file in vimrc vim tmux.conf teamocil ackrc gitconfig zshrc
 do
   echo "Linking $file."
-  ln -s $target_dir/$file .$file
+  ln -s $target_dir/$file $home_dir/.$file
 done
 
 #run vim for the first time and install bundles
