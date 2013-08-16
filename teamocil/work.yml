@@ -1,0 +1,17 @@
+session:
+  name: "Saturized"
+  windows:
+    - name: "Vim"
+      clear: true
+      root: "~/repos/saturized-responsive"
+      panes:
+        - cmd: 'vim'
+          height: 90
+        - cmd: 'pwd'
+          height: 10
+    - name: "Saturized watchers"
+      clear: true
+      root: "~/repos/saturized-responsive"
+      panes:
+        - cmd: 'pwd'
+        - cmd: 'compass watch'
