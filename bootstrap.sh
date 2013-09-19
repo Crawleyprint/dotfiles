@@ -13,7 +13,7 @@ git submodule update --init &&
 cd $home_dir &&
 
 #loop through files and link them
-for file in vimrc vim tmux.conf teamocil ackrc gitconfig zshrc
+for file in vimrc vim tmux.conf teamocil ackrc gitconfig zshrc slate
 do
   echo "Linking $file."
   ln -s $target_dir/$file $home_dir/.$file

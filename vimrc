@@ -17,7 +17,8 @@ call vundle#rc()
 " Vim Improvements
   Bundle 'scrooloose/nerdtree'
   Bundle 'scrooloose/nerdcommenter'
-  Bundle 'Lokaltog/vim-powerline'
+  "Bundle 'Lokaltog/vim-powerline'
+  Bundle 'bling/vim-airline'
   Bundle 'SirVer/ultisnips'
   Bundle 'tpope/vim-surround'
   Bundle 'YankRing.vim'
@@ -113,7 +114,7 @@ set ttymouse=xterm
 set backspace=indent,eol,start
 set laststatus=2
 set virtualedit=all
-set guifont=Consolas:h12
+set guifont=Monaco:h14
 set nobackup " disable swapping
 set noswapfile " disable swapping
 set background=dark
@@ -312,3 +313,13 @@ endfunction
 " Change ruler color
 highlight ColorColumn ctermbg=Black
 
+let g:UltisnipsSnippetsDir='snippets/'
+
+"Airline customization
+
+let g:airline_symbols= {}
+
+let g:airline_right_sep = '◀'
+let g:airline_left_sep = '▶'
+let g:airlline#extensions#syntastic#enabled = 1
+let g:airline#extensions#branch#enabled = 1
