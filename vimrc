@@ -49,6 +49,7 @@ call vundle#rc()
   Bundle 't9md/vim-chef'
   Bundle 'nono/vim-handlebars'
   Bundle 'rodjek/vim-puppet'
+  Bundle 'phmongeau/vim-slate'
 
 " Git/github related
   Bundle 'git.zip'

@@ -33,6 +33,7 @@ alias terminal 'iTerm'
 alias mail 'Airmail'
 alias chat 'Adium'
 alias skype 'Skype'
+alias photoshop 'Adobe Photoshop'
 
 # Layout's directive - layout name 'app name':OPTIONS operations
 
@@ -78,6 +79,7 @@ bind i:alt focus ${terminal}
 bind a:alt focus ${mail}
 bind s:alt focus ${chat}
 bind d:alt focus ${skype}
+bind p:alt focus ${photoshop}
 
 bind h:alt focus left
 bind j:alt focus down
@@ -85,3 +87,5 @@ bind k:alt focus up
 bind l:alt focus right
 bind g:alt focus behind
 bind 1:ctrl hint ASDFGHJKLQWERTYUIOP
+bind 2:ctrl grid padding:5 0:6,2 1:8,3
+bind tab:cmd switch
