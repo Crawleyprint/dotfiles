@@ -84,3 +84,4 @@ bind j:alt focus down
 bind k:alt focus up
 bind l:alt focus right
 bind g:alt focus behind
+bind 1:ctrl hint ASDFGHJKLQWERTYUIOP
