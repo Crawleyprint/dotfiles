@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Disable CMD+H</name>
+    <identifier>test</identifier>
+    <autogen>__KeyToKey__ KeyCode::H, VK_COMMAND | ModifierFlag::NONE, KeyCode::VK_NONE</autogen>
+  </item>
+</root>

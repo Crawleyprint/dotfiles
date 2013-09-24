@@ -19,5 +19,9 @@ do
   ln -s $target_dir/$file $home_dir/.$file
 done
 
+echo "Linking keyremap file"
+
+ln -s $target_dir/keyremap.xml $home_dir/Library/Application\ Support/KeyRemap4MacBook/private.xml
+
 #run vim for the first time and install bundles
 vim +BundleInstall +qall
