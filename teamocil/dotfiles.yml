@@ -1,9 +1,0 @@
-session:
-  name: "Dotfiles"
-  windows:
-    - name: "Dotfiles"
-      root: "~/repos/dotfiles"
-      layout: even-horizontal
-      panes:
-        - cmd: ["vim vimrc"]
-        - cmd: ["pwd"]
