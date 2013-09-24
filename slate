@@ -71,7 +71,10 @@ bind k:shift;alt resize +0% -5%
 bind j:shift;alt resize +0% +5%
 
 # Nudge - Nudges the window in the specified direction
-bind l:shift;alt nudge +1% +0
+bind l:cmd;alt nudge +10% +0
+bind h:cmd;alt nudge -10% +0
+bind k:cmd;alt nudge +0% -10%
+bind k:cmd;alt nudge +0% +10%
 
 # Focus - Brings the focus to the window in the specified position
 bind b:alt focus ${browser}
@@ -87,5 +90,12 @@ bind k:alt focus up
 bind l:alt focus right
 bind g:alt focus behind
 bind 1:ctrl hint ASDFGHJKLQWERTYUIOP
-bind 2:ctrl grid padding:5 0:6,2 1:8,3
+bind 2:ctrl grid padding:5 0:6,2 1:6,2
 bind tab:cmd switch
+
+# Throw Bindings
+bind h:ctrl;cmd throw 0 resize
+bind l:ctrl;cmd throw 1 resize
+
+# Reload Slate
+bind r:alt relaunch
