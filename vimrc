@@ -22,7 +22,6 @@ call vundle#rc()
   Bundle 'SirVer/ultisnips'
   Bundle 'tpope/vim-surround'
   Bundle 'YankRing.vim'
-  Bundle 'mileszs/ack.vim'
   Bundle 'vim-scripts/ZoomWin'
   Bundle 'ervandew/supertab'
   Bundle 'vim-scripts/Gundo'
@@ -33,6 +32,7 @@ call vundle#rc()
   Bundle 'kien/ctrlp.vim.git'
   Bundle 'vim-scripts/Align'
   Bundle 'int3/vim-taglist-plus'
+  Bundle 'rking/ag.vim'
 
 " Syntaxes
   Bundle 'php.vim'
@@ -125,6 +125,10 @@ set nowrap
 " How many tenths of a second to blink when matching brackets
 set mat=2
 set pt=<f12>
+
+" Set normal split behavior
+set splitbelow
+set splitright
 
 " Change mapleader
 let mapleader = ","
@@ -324,3 +328,14 @@ let g:airline_right_sep = '◀'
 let g:airline_left_sep = '▶'
 let g:airlline#extensions#syntastic#enabled = 1
 let g:airline#extensions#branch#enabled = 1
+
+if executable('ag')
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
