@@ -29,21 +29,18 @@ alias bottomleft corner bottom-left resize:screenSizeX/2;screenSizeY/2
 alias bottomright corner bottom-right resize:screenSizeX/2;screenSizeY/2
 
 alias browser 'Google Chrome'
-alias terminal 'iTerm'
+alias terminal 'Terminal'
 alias mail 'Airmail'
 alias chat 'Adium'
 alias skype 'Skype'
 alias photoshop 'Adobe Photoshop'
+alias finder 'Finder'
 
 # Layout's directive - layout name 'app name':OPTIONS operations
 
 # Creates the aliases needed for this example
 alias 0-full move screenOriginX;screenOriginY screenSizeX;screenSizeY 0
 alias 1-full move screenOriginX;screenOriginY screenSizeX;screenSizeY 1
-
-# twoDisplayLayout - Places iTerm in full screen in the first display and Firefox in full screen in the second display
-layout twoDisplayLayout 'iTerm':MAIN_FIRST #{0-full}
-layout twoDisplayLayout 'Firefox':REPEAT #{1-full}
 
 # Default's directive: default layout-or-snapshot-name screen-configuration
 
@@ -83,6 +80,7 @@ bind a:alt focus ${mail}
 bind s:alt focus ${chat}
 bind d:alt focus ${skype}
 bind p:alt focus ${photoshop}
+bind f:alt focus ${finder}
 
 bind h:alt focus left
 bind j:alt focus down
@@ -91,7 +89,6 @@ bind l:alt focus right
 bind g:alt focus behind
 bind 1:ctrl hint ASDFGHJKLQWERTYUIOP
 bind 2:ctrl grid padding:5 0:6,2 1:6,2
-bind tab:cmd switch
 
 # Throw Bindings
 bind h:ctrl;cmd throw 0 resize
