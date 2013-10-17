@@ -35,6 +35,7 @@ alias chat 'Adium'
 alias skype 'Skype'
 alias photoshop 'Adobe Photoshop'
 alias finder 'Finder'
+alias music 'Vox'
 
 # Layout's directive - layout name 'app name':OPTIONS operations
 
@@ -81,6 +82,7 @@ bind s:alt focus ${chat}
 bind d:alt focus ${skype}
 bind p:alt focus ${photoshop}
 bind f:alt focus ${finder}
+bind m:alt focus ${music}
 
 bind h:alt focus left
 bind j:alt focus down

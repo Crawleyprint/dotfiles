@@ -1,6 +1,7 @@
 set shell=/bin/bash
 set nocompatible               " be iMproved
 filetype off                   " required!
+
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
@@ -60,6 +61,11 @@ call vundle#rc()
   Bundle 'tomasr/molokai'
   Bundle 'geetarista/ego.vim'
   Bundle 'matthewtodd/vim-twilight'
+  Bundle 'altercation/vim-colors-solarized'
+  Bundle 'chriskempson/vim-tomorrow-theme'
+  Bundle 'jonathanfilip/vim-lucius'
+  Bundle 'trapd00r/neverland-vim-theme'
+  Bundle 'jpo/vim-railscasts-theme'
 
 " Html/CSS/Templating
   Bundle 'mattn/emmet-vim'
@@ -78,7 +84,6 @@ filetype plugin indent on     " required!
 syntax enable
 
 " Line numbers and indentation
-set number
 set mouse=a
 set mousehide
 set colorcolumn=80
@@ -118,10 +123,10 @@ set virtualedit=all
 set guifont=Monaco:h14
 set nobackup " disable swapping
 set noswapfile " disable swapping
-set background=dark
+set background=light
 set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
-set nowrap
+set fillchars+=vert:\ | set nowrap
 " How many tenths of a second to blink when matching brackets
 set mat=2
 set pt=<f12>
@@ -142,6 +147,7 @@ let NERDTreeShowHidden = 1
 
 " Choose right linter for syntastic
 let g:syntastic_javascript_checkers=['gjslint']
+let g:syntastic_scss_checkers=['scss-lint']
 
 
 " *****************************
@@ -276,7 +282,10 @@ set guioptions-=L
 set guioptions-=r
 
 "colors
-colorscheme twilight
+"let g:solarized_termcolors=256
+
+colorscheme lucius
+LuciusBlackLowContrast
 
 function! NumberToggle()
   if(&relativenumber == 1)
