@@ -17,68 +17,31 @@ call vundle#rc()
 
 " Vim Improvements
   Bundle 'scrooloose/nerdtree'
-  Bundle 'scrooloose/nerdcommenter'
-  "Bundle 'Lokaltog/vim-powerline'
   Bundle 'bling/vim-airline'
-  Bundle 'SirVer/ultisnips'
-  Bundle 'tpope/vim-surround'
   Bundle 'YankRing.vim'
-  Bundle 'vim-scripts/ZoomWin'
   Bundle 'ervandew/supertab'
   Bundle 'vim-scripts/Gundo'
-  Bundle 'chrisbra/NrrwRgn'
-  Bundle 'tmhedberg/matchit'
-  Bundle 'Townk/vim-autoclose'
-  Bundle 'vim-scripts/scratch.vim'
   Bundle 'kien/ctrlp.vim.git'
-  Bundle 'vim-scripts/Align'
-  Bundle 'int3/vim-taglist-plus'
   Bundle 'rking/ag.vim'
 
 " Syntaxes
-  Bundle 'php.vim'
   Bundle 'scrooloose/syntastic'
-  Bundle 'vim-scripts/httplog'
-  Bundle 'plasticboy/vim-markdown'
-  Bundle 'aliva/vim-fish'
-  Bundle 'tpope/vim-rails.git'
   Bundle 'tpope/vim-haml'
-  Bundle 'slim-template/vim-slim'
-  Bundle 'mattn/webapi-vim'
-  Bundle 'jeyb/vim-jst'
+  Bundle 'plasticboy/vim-markdown'
+  Bundle 'tpope/vim-rails.git'
   Bundle 'vim-scripts/JSON.vim'
-  Bundle 't9md/vim-chef'
-  Bundle 'nono/vim-handlebars'
-  Bundle 'rodjek/vim-puppet'
   Bundle 'phmongeau/vim-slate'
-
-" Git/github related
-  Bundle 'git.zip'
-  Bundle 'tpope/vim-fugitive'
-  Bundle 'mattn/gist-vim'
+  Bundle 'othree/javascript-libraries-syntax.vim'
+  Bundle 'othree/html5.vim'
+  Bundle 'vim-scripts/JavaScript-Indent'
+  Bundle 'kchmck/vim-coffee-script'
 
 " Color schemes
   Bundle 'tomasr/molokai'
-  Bundle 'geetarista/ego.vim'
-  Bundle 'matthewtodd/vim-twilight'
-  Bundle 'altercation/vim-colors-solarized'
-  Bundle 'chriskempson/vim-tomorrow-theme'
   Bundle 'jonathanfilip/vim-lucius'
-  Bundle 'trapd00r/neverland-vim-theme'
-  Bundle 'jpo/vim-railscasts-theme'
 
 " Html/CSS/Templating
   Bundle 'mattn/emmet-vim'
-  Bundle 'miripiruni/CSScomb-for-Vim'
-  Bundle 'othree/html5.vim'
-  Bundle 'beyondwords/vim-twig'
-
-" Javascript
-  Bundle 'JavaScript-Indent'
-  Bundle 'JavaScript-syntax'
-  Bundle 'ParseJSON'
-  Bundle 'BufOnly.vim'
-  Bundle 'kchmck/vim-coffee-script'
 
 filetype plugin indent on     " required!
 syntax enable
@@ -146,7 +109,7 @@ let g:user_emmet_mode = 'a'
 let NERDTreeShowHidden = 1
 
 " Choose right linter for syntastic
-let g:syntastic_javascript_checkers=['gjslint']
+let g:syntastic_javascript_checkers=['jshint']
 let g:syntastic_scss_checkers=['scss-lint']
 
 
@@ -229,7 +192,6 @@ vnoremap / /\v
 nnoremap <C-i> /\v
 vnoremap <C-i> /\v
 
-
 " Dismiss search highlight
 nnoremap <leader><space> :noh<cr>
 
@@ -237,7 +199,6 @@ nnoremap <leader><space> :noh<cr>
 noremap y "*y
 noremap yy "*Y
 noremap Y "*y$
-
 
 "nerdtree on/off
 nmap <silent> <leader>m :NERDTreeFocus<cr>
@@ -248,34 +209,12 @@ vnoremap <f5> vi{ :CSScomb<cr>
 vnoremap > ><cr>gv
 vnoremap < <<cr>gv
 
-" Set indentation for files
-autocmd FileType css,sass,scss setlocal ai sw=2 sts=2 et
-
-" Vim doesn't set a FileType for slim, so we'll do it manually:
-autocmd BufNewFile,BufReadPost *.slim setlocal filetype=slim
-
-" Vim doesn't set a FileType for JSON, so we'll do it manually:
-autocmd BufNewFile,BufReadPost *.json setlocal filetype=javascript.json
-
 " Requires that you have Python v2.6+ installed. (Most *nix systems do.)
 autocmd FileType json let b:vimpipe_command="python -m json.tool"
+au! BufRead,BufNewFile *.json set filetype=json
 
 " Strip white space at the end of line
 autocmd BufWritePre * :%s/\s\+$//e
-
-" Set syntax to jst for ejs files
-au BufNewFile,BufRead *.ejs set filetype=jst
-
-" Markdown
-au BufRead *.md set ft=markdown
-
-
-" Set omnicomplete
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
 " Remove scrollbars
 set guioptions-=L
@@ -337,6 +276,7 @@ let g:airline_right_sep = '◀'
 let g:airline_left_sep = '▶'
 let g:airlline#extensions#syntastic#enabled = 1
 let g:airline#extensions#branch#enabled = 1
+let g:used_javascript_libs = 'underscore,backbone,angularjs,jquery'
 
 if executable('ag')
   " Use Ag over Grep
