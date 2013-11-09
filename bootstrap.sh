@@ -15,6 +15,8 @@ cd $home_dir &&
 #loop through files and link them
 for file in vimrc vim tmux.conf teamocil ackrc gitconfig zshrc slate
 do
+  echo "Backing up..."
+  mv $home_dir/.$file $home_dir/.$file.old
   echo "Linking $file."
   ln -s $target_dir/$file $home_dir/.$file
 done
