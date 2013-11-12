@@ -36,6 +36,27 @@ alias skype 'Skype'
 alias photoshop 'Adobe Photoshop'
 alias finder 'Finder'
 alias music 'Vox'
+alias firefox 'Firefox'
+alias safari 'Safari'
+alias opera 'Opera'
+#
+# Focus - Brings the focus to the window in the specified position
+bind b:alt focus ${browser}
+bind i:alt focus ${terminal}
+bind a:alt focus ${mail}
+bind s:alt focus ${chat}
+bind d:alt focus ${skype}
+bind f:alt focus ${finder}
+bind m:alt focus ${music}
+bind u:alt focus ${firefox}
+bind p:alt focus ${safari}
+bind o:alt focus ${opera}
+
+bind h:alt focus left
+bind j:alt focus down
+bind k:alt focus up
+bind l:alt focus right
+bind g:alt focus behind
 
 # Layout's directive - layout name 'app name':OPTIONS operations
 
@@ -73,24 +94,6 @@ bind l:cmd;alt nudge +10% +0
 bind h:cmd;alt nudge -10% +0
 bind k:cmd;alt nudge +0% -10%
 bind k:cmd;alt nudge +0% +10%
-
-# Focus - Brings the focus to the window in the specified position
-bind b:alt focus ${browser}
-bind i:alt focus ${terminal}
-bind a:alt focus ${mail}
-bind s:alt focus ${chat}
-bind d:alt focus ${skype}
-bind p:alt focus ${photoshop}
-bind f:alt focus ${finder}
-bind m:alt focus ${music}
-
-bind h:alt focus left
-bind j:alt focus down
-bind k:alt focus up
-bind l:alt focus right
-bind g:alt focus behind
-bind 1:ctrl hint ASDFGHJKLQWERTYUIOP
-bind 2:ctrl grid padding:5 0:6,2 1:6,2
 
 # Throw Bindings
 bind h:ctrl;cmd throw 0 resize
