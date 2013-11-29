@@ -15,5 +15,6 @@
 [alias]
   co = checkout
   st = status -sb
-  ammend = commit --amend -C HEAD
+  difw = diff --word-diff
+  amend = commit --amend -C HEAD
   ls = log --pretty=format:\"%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]\" --decorate --date=short
