@@ -58,14 +58,7 @@ call vundle#rc()
   Bundle 'mattn/gist-vim'
 
 " Color schemes
-  Bundle 'tomasr/molokai'
-  Bundle 'geetarista/ego.vim'
-  Bundle 'matthewtodd/vim-twilight'
-  Bundle 'altercation/vim-colors-solarized'
-  Bundle 'chriskempson/vim-tomorrow-theme'
-  Bundle 'jonathanfilip/vim-lucius'
-  Bundle 'trapd00r/neverland-vim-theme'
-  Bundle 'jpo/vim-railscasts-theme'
+  Bundle 'flazz/vim-colorschemes'
 
 " Html/CSS/Templating
   Bundle 'mattn/emmet-vim'
@@ -284,8 +277,7 @@ set guioptions-=r
 "colors
 "let g:solarized_termcolors=256
 
-colorscheme lucius
-LuciusBlackLowContrast
+colorscheme molokai
 
 function! NumberToggle()
   if(&relativenumber == 1)
