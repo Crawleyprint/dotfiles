@@ -1,0 +1,3 @@
+[submodule "Vimfiles"]
+	path = Vimfiles
+	url = git@github.com:Crawleyprint/Vimfiles.git
