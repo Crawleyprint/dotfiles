@@ -39,6 +39,7 @@ alias music 'Vox'
 alias firefox 'Firefox'
 alias safari 'Safari'
 alias opera 'Opera'
+alias editor 'MacVim'
 #
 # Focus - Brings the focus to the window in the specified position
 bind b:alt focus ${browser}
@@ -51,6 +52,7 @@ bind m:alt focus ${music}
 bind u:alt focus ${firefox}
 bind p:alt focus ${safari}
 bind o:alt focus ${opera}
+bind c:alt focus ${editor}
 
 bind h:alt focus left
 bind j:alt focus down
