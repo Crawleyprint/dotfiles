@@ -33,13 +33,13 @@ alias terminal 'Terminal'
 alias mail 'Airmail'
 alias chat 'Adium'
 alias skype 'Skype'
-alias photoshop 'Adobe Photoshop'
 alias finder 'Finder'
 alias music 'Vox'
 alias firefox 'Firefox'
 alias safari 'Safari'
 alias opera 'Opera'
 alias editor 'MacVim'
+alias photoshop 'Photoshop'
 #
 # Focus - Brings the focus to the window in the specified position
 bind b:alt focus ${browser}
@@ -50,7 +50,7 @@ bind d:alt focus ${skype}
 bind f:alt focus ${finder}
 bind m:alt focus ${music}
 bind u:alt focus ${firefox}
-bind p:alt focus ${safari}
+bind p:alt focus ${photoshop}
 bind o:alt focus ${opera}
 bind c:alt focus ${editor}
 
