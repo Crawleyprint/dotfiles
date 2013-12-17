@@ -11,6 +11,7 @@ ZSH_THEME="miloshadzic"
 # alias zshconfig="vim ~/.zshrc"
 # alias ohmyzsh="vim ~/.oh-my-zsh"
 alias bc="brew cask"
+alias mvim="reattach-to-user-namespace mvim"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
