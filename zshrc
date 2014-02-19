@@ -49,6 +49,7 @@ source $ZSH/oh-my-zsh.sh
 homebrew=/usr/local/bin:/usr/local/sbin
 
 export PATH="/usr/local/share/npm/bin:$PATH"
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 
 # Customize to your needs...
 export PATH=$homebrew:$PATH
@@ -60,3 +61,5 @@ compctl -g '~/.teamocil/*(:t:r)' teamocil
 
 # teamocil alias to open with --here flag
 alias teamocil='teamocil --here'
+
+
