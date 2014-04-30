@@ -41,6 +41,7 @@ alias opera 'Opera'
 alias editor 'MacVim'
 alias photoshop 'Photoshop'
 alias teamchat 'Flowdock'
+alias rss 'Reeder'
 #
 # Focus - Brings the focus to the window in the specified position
 bind b:alt focus ${browser}
@@ -55,6 +56,7 @@ bind o:alt focus ${opera}
 bind c:alt focus ${editor}
 bind i:alt focus ${terminal}
 bind n:alt focus ${teamchat}
+bind g:alt focus ${rss}
 
 bind h:alt focus left
 bind j:alt focus down
