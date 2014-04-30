@@ -5,13 +5,14 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="miloshadzic"
+ZSH_THEME="af-magic"
+
+alias dbox="HOME=/Volumes/Storage/Personal\ Dropbox/Dropbox /Applications/Dropbox.app/Contents/MacOS/Dropbox &"
 
 # Example aliases
 # alias zshconfig="vim ~/.zshrc"
 # alias ohmyzsh="vim ~/.oh-my-zsh"
 alias bc="brew cask"
-alias mvim="reattach-to-user-namespace mvim"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -32,7 +33,7 @@ alias mvim="reattach-to-user-namespace mvim"
 DISABLE_CORRECTION="true"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment following line if you want to disable marking untracked files under
 # VCS as dirty. This makes repository status check for large repositories much,
@@ -42,24 +43,13 @@ DISABLE_CORRECTION="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx node)
+plugins=(git osx node virtualenv)
 
 source $ZSH/oh-my-zsh.sh
 
 homebrew=/usr/local/bin:/usr/local/sbin
 
-export PATH="/usr/local/share/npm/bin:$PATH"
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-
-# Customize to your needs...
-export PATH=$homebrew:$PATH
-#export PATH=$PATH:/usr/local/bin:/usr/local/share/npm/bin:/usr/bin:/bin:/usr/sbin:/sbin
+export PATH=$homebrew:/usr/local/share/npm/bin:/opt/local/bin:/opt/local/sbin:$PATH
 
 export RBENV_ROOT=/usr/local/var/rbenv
 eval "$(rbenv init -)"
-compctl -g '~/.teamocil/*(:t:r)' teamocil
-
-# teamocil alias to open with --here flag
-alias teamocil='teamocil --here'
-
-
