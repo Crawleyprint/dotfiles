@@ -29,7 +29,7 @@ alias bottomleft corner bottom-left resize:screenSizeX/2;screenSizeY/2
 alias bottomright corner bottom-right resize:screenSizeX/2;screenSizeY/2
 
 alias browser 'Google Chrome'
-alias terminal 'Terminal'
+alias terminal 'iTerm'
 alias mail 'Airmail'
 alias chat 'Adium'
 alias skype 'Skype'
@@ -40,10 +40,10 @@ alias safari 'Safari'
 alias opera 'Opera'
 alias editor 'MacVim'
 alias photoshop 'Photoshop'
+alias teamchat 'Flowdock'
 #
 # Focus - Brings the focus to the window in the specified position
 bind b:alt focus ${browser}
-bind i:alt focus ${terminal}
 bind a:alt focus ${mail}
 bind s:alt focus ${chat}
 bind d:alt focus ${skype}
@@ -53,6 +53,8 @@ bind u:alt focus ${firefox}
 bind p:alt focus ${photoshop}
 bind o:alt focus ${opera}
 bind c:alt focus ${editor}
+bind i:alt focus ${terminal}
+bind n:alt focus ${teamchat}
 
 bind h:alt focus left
 bind j:alt focus down
@@ -84,22 +86,6 @@ bind l:ctrl;shift;cmd ${righthalf}
 bind l:ctrl;shift;alt;cmd ${rightthird}
 bind .:ctrl;shift;cmd ${bottomright}
 bind p:ctrl;shift;cmd ${topright}
-
-# Resize - Resizes the window in the specified direction
-bind l:shift;alt resize +5% +0
-bind h:shift;alt resize -5% +0
-bind k:shift;alt resize +0% -5%
-bind j:shift;alt resize +0% +5%
-
-# Nudge - Nudges the window in the specified direction
-bind l:cmd;alt nudge +10% +0
-bind h:cmd;alt nudge -10% +0
-bind k:cmd;alt nudge +0% -10%
-bind k:cmd;alt nudge +0% +10%
-
-# Throw Bindings
-bind h:ctrl;cmd throw 0 resize
-bind l:ctrl;cmd throw 1 resize
 
 # Reload Slate
 bind r:alt relaunch
