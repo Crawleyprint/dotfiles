@@ -1,20 +1,47 @@
-[core]
-  editor = vim
-[color]
-  ui = auto
 [user]
   name = Mladen Stepanic
   email = mladen.stepanic@saturized.com
+
 [github]
   user = crawleyprint
   email = crawleyprint@gmail.com
+
+[core]
+  editor = vim
+
+[color]
+  ui = auto
+
 [githubalias]
   tree = log --graph --pretty=oneline --abrev-commit
+
 [pull]
   rebase = true
+
+[push]
+  default = matching
+
 [alias]
   co = checkout
   st = status -sb
   difw = diff --word-diff
   amend = commit --amend -C HEAD
   ls = log --pretty=format:\"%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]\" --decorate --date=short
+
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+
+[color "status"]
+	added = yellow
+	changed = red
+	untracked = cyan
+
+[diff]
+  tool = Kaleidoscope
+[difftool "Kaleidoscope"]
+  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[mergetool "Kaleidoscope"]
+  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+  trustExitCode = true
