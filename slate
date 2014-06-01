@@ -42,6 +42,7 @@ alias editor 'MacVim'
 alias photoshop 'Photoshop'
 alias teamchat 'Flowdock'
 alias rss 'Reeder'
+alias git 'SourceTree'
 #
 # Focus - Brings the focus to the window in the specified position
 bind b:alt focus ${browser}
@@ -57,6 +58,7 @@ bind c:alt focus ${editor}
 bind i:alt focus ${terminal}
 bind n:alt focus ${teamchat}
 bind g:alt focus ${rss}
+bind x:alt focus ${git}
 
 bind h:alt focus left
 bind j:alt focus down
