@@ -13,7 +13,7 @@ git submodule update --init &&
 cd $home_dir &&
 
 #loop through files and link them
-for file in Vimfiles/vimrc Vimfiles/vim tmux.conf teamocil gitconfig zshrc slate
+for file in Vimfiles/vimrc Vimfiles/vim gitconfig zshrc slate
 do
   echo "Backing up..."
   mv $home_dir/.$file $home_dir/.$file.old
