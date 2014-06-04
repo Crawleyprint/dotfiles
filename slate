@@ -45,13 +45,13 @@ alias rss 'Reeder'
 alias git 'SourceTree'
 #
 # Focus - Brings the focus to the window in the specified position
-bind b:alt focus ${browser}
+bind b:alt focus ${firefox}
 bind a:alt focus ${mail}
 bind s:alt focus ${chat}
 bind d:alt focus ${skype}
 bind f:alt focus ${finder}
 bind m:alt focus ${music}
-bind u:alt focus ${firefox}
+bind u:alt focus ${browser}
 bind p:alt focus ${photoshop}
 bind o:alt focus ${opera}
 bind c:alt focus ${editor}
