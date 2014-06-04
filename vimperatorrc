@@ -1,0 +1,9 @@
+" Vimperator plugin settings for Firefox browser
+" Author: Mladen Stepanic
+
+" Remap j and k keys to scroll more than one line at the time
+nnoremap j 4j
+nnoremap k 5k
+
+" Disable addressbar to increase usable space
+set gui=nonavigation
