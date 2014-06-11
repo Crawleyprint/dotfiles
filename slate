@@ -43,6 +43,7 @@ alias photoshop 'Photoshop'
 alias teamchat 'Flowdock'
 alias rss 'Reeder'
 alias git 'SourceTree'
+alias pm 'Trello'
 #
 # Focus - Brings the focus to the window in the specified position
 bind b:alt focus ${firefox}
@@ -59,6 +60,7 @@ bind i:alt focus ${terminal}
 bind n:alt focus ${teamchat}
 bind g:alt focus ${rss}
 bind x:alt focus ${git}
+bind h:alt focus ${pm}
 
 bind h:alt focus left
 bind j:alt focus down
