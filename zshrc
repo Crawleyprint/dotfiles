@@ -5,9 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="pygmalion"
-
-alias dbox="HOME=/Volumes/Storage/Personal\ Dropbox/Dropbox /Applications/Dropbox.app/Contents/MacOS/Dropbox &"
+ZSH_THEME="norm"
 
 # Example aliases
 # alias zshconfig="vim ~/.zshrc"
@@ -53,3 +51,5 @@ export PATH=$homebrew:/usr/local/share/npm/bin:/opt/local/bin:/opt/local/sbin:$P
 
 export RBENV_ROOT=/usr/local/var/rbenv
 eval "$(rbenv init -)"
+
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_65.jdk

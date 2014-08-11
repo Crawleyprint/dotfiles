@@ -1,6 +1,6 @@
 [user]
   name = Mladen Stepanic
-  email = mladen.stepanic@saturized.com
+  email = mladen.stepanic@sixsentix.com
 
 [github]
   user = crawleyprint
@@ -8,6 +8,7 @@
 
 [core]
   editor = vim
+  excludesfile = /Users/localadmin/.gitignore_global
 
 [color]
   ui = auto
@@ -55,4 +56,10 @@
 
 [mergetool "Kaleidoscope"]
   cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+  trustExitCode = true
+[difftool "sourcetree"]
+  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+  path =
+[mergetool "sourcetree"]
+  cmd = /opt/homebrew-cask/Caskroom/sourcetree/1.9.7/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
   trustExitCode = true
