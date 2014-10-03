@@ -1,9 +1,5 @@
 [user]
   name = Mladen Stepanic
-  email = mladen.stepanic@sixsentix.com
-
-[github]
-  user = crawleyprint
   email = crawleyprint@gmail.com
 
 [core]
@@ -15,9 +11,6 @@
 
 [githubalias]
   tree = log --graph --pretty=oneline --abrev-commit
-
-[pull]
-  rebase = true
 
 [push]
   default = matching
