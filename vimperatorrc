@@ -5,5 +5,3 @@
 nnoremap j 4j
 nnoremap k 5k
 
-" Disable addressbar to increase usable space
-set gui=nonavigation
